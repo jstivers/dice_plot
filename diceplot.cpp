@@ -9,6 +9,9 @@ void printHistogram(int counts[]){
 
     for(int q = 4; q<25; q++){
         cout << endl << q << (":");
+        for(int i = 0; i < counts[q-4];i++){
+            cout << ("x");
+        }
     }
 
 }
@@ -26,7 +29,7 @@ int roll(){
 
     //  algorithm
 
-        srand((unsigned int) time(NULL));
+        srand(time(0));
         cast1 = (rand()%6)+1;
 
         cast2 = (rand()%6)+1;
@@ -52,7 +55,7 @@ int main () {
 
     //  algorithm
 
-    for(int i = 0; i < 5; i++){
+    for(int i = 0; i < 7; i++){
         cast = roll();
         counts[cast] = counts[cast]+1;
     }
