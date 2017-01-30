@@ -7,12 +7,8 @@ void printHistogram(int counts[]){
 
     //  algorithm
 
-    for(int i = 0; i < 25; i++){
-        cout << ("\n") << (i) << (":");
-        for(int n=0; n < counts[i]; n++ ){
-            cout << counts[i];
-            cout << ("");
-        }
+    for(int q = 4; q<25; q++){
+        cout << endl << q << (":");
     }
 
 }
@@ -48,15 +44,15 @@ int main () {
 
     //  variables
 
-    int counts[24];
-    for(int i=0; i<25;i++){
+    int counts[21];
+    for(int i=0; i<21;i++){
         counts[i] = 0;
     }
     int cast = 0;
 
     //  algorithm
 
-    for(int i = 0; i < 30; i++){
+    for(int i = 0; i < 5; i++){
         cast = roll();
         counts[cast] = counts[cast]+1;
     }
