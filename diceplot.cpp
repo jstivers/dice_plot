@@ -1,22 +1,22 @@
 #include <iostream>
-#include <ctime>
+
 
 using namespace std;
 
 void printHistogram(int counts[]){
 
     //  algorithm
-    int q = 4;
-    int z = 4;
 
-    do{
-        cout << "\n" << z << (":");
-        for( int i = 0; counts[ z - 4] > i ; i++){
+    for(int q = 4; q<25; q++){
+        if(q<10){
+            cout << (" ");
+        }
+        cout << q << (":");
+        for( int i = 0; counts[ q - 4] > i ; i++){
             cout << ("x");
         }
-        q++;
-        z++;
-    }while(q<=24);
+        cout << ("\n");
+    }
 
 }
 
@@ -24,25 +24,18 @@ int roll(){
 
     //  variables
 
-    int cast;
-    int cast1;
-    int cast2;
-    int cast3;
-    int cast4;
+    int cast = 0;
+    int holder = 0;
 
 
     //  algorithm
 
 
-        cast1 = (rand()%6)+1;
+        for(int i = 0; i < 4; i++){
+            holder = rand()%6+0;
+            cast = cast + holder;
+        }
 
-        cast2 = (rand()%6)+1;
-
-        cast3 = (rand()%6)+1;
-
-        cast4 = (rand()%6)+1;
-
-        cast = cast1+cast2+cast3+cast4;
     return cast;
 
 }
@@ -51,17 +44,22 @@ int main () {
 
     //  variables
 
+    int input = 0;
     int counts[21];
     for(int i=0; i<21;i++){
         counts[i] = 0;
     }
     int cast = 0;
 
+    //  io
+
+    cout << ("How many rolls do you want? ");
+    cin >> input;
     //  algorithm
 
-    srand(time(0));
+    srand((unsigned int) time(NULL));
 
-    for(int i = 0; i < 500; i++){
+    for(int i = 0; i < input; i++){
         cast = roll();
         counts[cast] = counts[cast]+1;
     }
