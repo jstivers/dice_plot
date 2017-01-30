@@ -7,11 +7,11 @@ void printHistogram(int counts[]){
 
     //  algorithm
 
-    for(int i = 4; i < 25; i++){
+    for(int i = 0; i < 25; i++){
         cout << ("\n") << (i) << (":");
         for(int n=0; n < counts[i]; n++ ){
             cout << counts[i];
-            cout << ("x");
+            cout << ("");
         }
     }
 
