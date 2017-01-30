@@ -56,7 +56,7 @@ int main () {
 
     //  algorithm
 
-    for(int i = 0; i < 500; i++){
+    for(int i = 0; i < 30; i++){
         cast = roll();
         counts[cast] = counts[cast]+1;
     }
