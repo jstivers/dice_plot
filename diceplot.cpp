@@ -55,6 +55,7 @@ int main () {
 
     cout << ("How many rolls do you want? ");
     cin >> input;
+
     //  algorithm
 
     srand((unsigned int) time(NULL));
