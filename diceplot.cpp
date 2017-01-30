@@ -6,13 +6,17 @@ using namespace std;
 void printHistogram(int counts[]){
 
     //  algorithm
+    int q = 4;
+    int z = 4;
 
-    for(int q = 4; q<25; q++){
-        cout << endl << q << (":");
-        for(int i = 0; i < counts[q-4];i++){
+    do{
+        cout << "\n" << z << (":");
+        for( int i = 0; counts[ z - 4] > i ; i++){
             cout << ("x");
         }
-    }
+        q++;
+        z++;
+    }while(q<=24);
 
 }
 
@@ -29,7 +33,7 @@ int roll(){
 
     //  algorithm
 
-        srand(time(0));
+
         cast1 = (rand()%6)+1;
 
         cast2 = (rand()%6)+1;
@@ -55,7 +59,9 @@ int main () {
 
     //  algorithm
 
-    for(int i = 0; i < 7; i++){
+    srand(time(0));
+
+    for(int i = 0; i < 500; i++){
         cast = roll();
         counts[cast] = counts[cast]+1;
     }
